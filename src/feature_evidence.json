@@ -1,0 +1,87 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-frontend-story-browsing-interface-that-displays-all-stories-organized-by-genre-with-navigation-between-genres",
+      "featureTitle": "Create a frontend story browsing interface that displays all stories organized by genre with navigation between genres",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/GenreNav.tsx",
+        "frontend/src/components/StoryCard.tsx",
+        "frontend/src/pages/BrowseStories.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-story-creation-form-where-users-can-write-and-publish-new-stories-with-title-content-and-genre-selection",
+      "featureTitle": "Build a story creation form where users can write and publish new stories with title, content, and genre selection",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/CreateStory.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-story-reading-view-that-displays-the-full-story-content-with-a-text-to-speech-feature-that-reads-the-story-aloud-using-browser-speech-synthesis",
+      "featureTitle": "Implement a story reading view that displays the full story content with a text-to-speech feature that reads the story aloud using browser speech synthesis",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/TextToSpeechControls.tsx",
+        "frontend/src/hooks/useTextToSpeech.tsx",
+        "frontend/src/pages/ReadStory.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-a-visually-engaging-and-immersive-interface-with-a-literary-or-storytelling-theme-that-uses-warm-inviting-colors-and-typography-suitable-for-a-reading-experience",
+      "featureTitle": "Design a visually engaging and immersive interface with a literary or storytelling theme that uses warm, inviting colors and typography suitable for a reading experience",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

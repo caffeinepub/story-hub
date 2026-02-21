@@ -1,0 +1,16 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining routes for home, browse, create, and read story pages, all wrapped in a Layout component.",
+  "frontend/src/pages/Home.tsx": "Landing page featuring a hero section with the books image, call-to-action buttons, and a features section highlighting the seven genres, story creation, and text-to-speech capabilities.",
+  "frontend/src/pages/BrowseStories.tsx": "Story browsing page with genre navigation tabs and a grid of story cards, fetching and displaying stories filtered by the selected genre.",
+  "frontend/src/pages/CreateStory.tsx": "Story creation form page with inputs for title, author, genre selection, and content textarea, submitting new stories to the backend.",
+  "frontend/src/pages/ReadStory.tsx": "Story reading page displaying full story content with metadata, badges for genre and AI-generated status, and text-to-speech playback controls.",
+  "frontend/src/components/Layout.tsx": "Application layout wrapper with header navigation, footer with attribution, and consistent warm literary theming across all pages.",
+  "frontend/src/components/StoryCard.tsx": "Reusable story card component displaying story title, author, genre badge, creation date, AI-generated indicator, and content preview with click navigation to full story.",
+  "frontend/src/components/GenreNav.tsx": "Genre navigation component with tabs for all seven genres, displaying genre icons and handling genre selection state.",
+  "frontend/src/components/TextToSpeechControls.tsx": "Control panel component with play/pause/stop buttons for managing text-to-speech playback with visual state indicators.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including filtering stories by genre, fetching individual stories, listing all stories, and creating new stories with automatic cache invalidation.",
+  "frontend/src/hooks/useTextToSpeech.tsx": "Custom hook managing browser Web Speech API for text-to-speech functionality with play, pause, stop, and resume capabilities.",
+  "frontend/src/index.css": "Global styles with warm literary color palette using OKLCH colors (ambers, browns, creams), custom font imports (Crimson Text serif and Inter sans-serif), and design tokens for light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with extended warm color palette, custom font families (Crimson Text serif, Inter sans-serif), and typography settings optimized for reading experience.",
+  "frontend/src/lib/utils.ts": "Utility function for merging Tailwind CSS classes using clsx and tailwind-merge."
+}

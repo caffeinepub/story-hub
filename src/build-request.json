@@ -1,0 +1,156 @@
+{
+  "kind": "build_request",
+  "title": "Build story creation and sharing platform with AI generation and text-to-speech",
+  "projectName": "Story Hub",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a backend data model for stories that includes fields for title, content, author, genre (love, horror, fantasy, romance, thriller, science fiction, historical), creation date, and whether it is AI-generated or user-created",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "a website where i can make lots of stories",
+          "ai stories like love ,horrer Fantasy, Romance, Thriller, Science Fiction, Historical"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Story data structure supports all specified genres",
+        "Stories can be marked as AI-generated or user-created",
+        "Each story has a unique identifier, title, content, author, genre, and timestamp"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement backend functions to create, retrieve, list, and filter stories by genre",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "their is already generated storys",
+          "people can publish their storys"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can create and save new stories",
+        "Stories can be retrieved by ID",
+        "Stories can be listed and filtered by genre",
+        "Both AI-generated and user-created stories are accessible"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Generate a collection of AI-generated sample stories for each genre (love, horror, fantasy, romance, thriller, science fiction, historical) and seed them in the backend on initialization",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "their is already generated storys with ai stories like love ,horrer Fantasy, Romance, Thriller, Science Fiction, Historical"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least one sample story exists for each of the seven genres",
+        "Sample stories are pre-populated when the application initializes",
+        "Each sample story has appropriate genre-specific content"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a frontend story browsing interface that displays all stories organized by genre with navigation between genres",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "ai stories like love ,horrer Fantasy, Romance, Thriller, Science Fiction, Historical"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can browse stories by selecting different genres",
+        "All seven genres are clearly displayed and accessible",
+        "Story titles and basic metadata are visible in the browse view"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Build a story creation form where users can write and publish new stories with title, content, and genre selection",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "i can make lots of stories",
+          "people can publish their storys"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form includes fields for title, content, and genre dropdown",
+        "Users can submit and save new stories",
+        "Newly created stories appear in the story list immediately after publishing"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement a story reading view that displays the full story content with a text-to-speech feature that reads the story aloud using browser speech synthesis",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "that story can lision also ai is spiking thst storys"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can click on a story to view its full content",
+        "A play/pause button controls text-to-speech playback",
+        "The browser's speech synthesis API reads the story content aloud",
+        "Playback can be stopped and restarted"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Design a visually engaging and immersive interface with a literary or storytelling theme that uses warm, inviting colors and typography suitable for a reading experience",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The design evokes a literary or storytelling atmosphere",
+        "Typography is optimized for comfortable reading",
+        "Color scheme is warm and inviting, avoiding default blue and purple",
+        "Layout clearly separates browsing, reading, and creation experiences"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use only browser-based text-to-speech (Web Speech API) for reading stories aloud",
+    "Do not integrate external AI services or LLM APIs for story generation",
+    "Generate sample AI stories as static content during backend initialization"
+  ],
+  "nonGoals": [
+    "Real-time collaboration on stories",
+    "User authentication or user profiles",
+    "Story ratings or comments",
+    "Integration with external AI services like OpenAI or Anthropic",
+    "Advanced text-to-speech with voice selection or speed controls"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Decorative book or manuscript illustration for the homepage hero section (hero-books.dim_1200x600.png)",
+      "Genre icons for each of the seven story categories: love, horror, fantasy, romance, thriller, science fiction, historical (genre-love.dim_128x128.png, genre-horror.dim_128x128.png, genre-fantasy.dim_128x128.png, genre-romance.dim_128x128.png, genre-thriller.dim_128x128.png, genre-scifi.dim_128x128.png, genre-historical.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}

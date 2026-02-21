@@ -1,0 +1,101 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A story creation and sharing website with AI-generated stories across multiple genres (love, horror, fantasy, romance, thriller, science fiction, historical). Users can create and publish their own stories, and all stories can be read aloud using AI text-to-speech.",
+  "architectural_notes": [
+    "Website platform for story creation and sharing",
+    "Multi-genre story support (love, horror, fantasy, romance, thriller, science fiction, historical)",
+    "AI integration for story generation and text-to-speech"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Decorative book or manuscript illustration for the homepage hero section (hero-books.dim_1200x600.png)\n- Genre icons for each of the seven story categories: love, horror, fantasy, romance, thriller, science fiction, historical (genre-love.dim_128x128.png, genre-horror.dim_128x128.png, genre-fantasy.dim_128x128.png, genre-romance.dim_128x128.png, genre-thriller.dim_128x128.png, genre-scifi.dim_128x128.png, genre-historical.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-frontend-story-browsing-interface-that-displays-all-stories-organized-by-genre-with-navigation-between-genres",
+      "title": "Create a frontend story browsing interface that displays all stories organized by genre with navigation between genres",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-story-creation-form-where-users-can-write-and-publish-new-stories-with-title-content-and-genre-selection",
+      "title": "Build a story creation form where users can write and publish new stories with title, content, and genre selection",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-story-reading-view-that-displays-the-full-story-content-with-a-text-to-speech-feature-that-reads-the-story-aloud-using-browser-speech-synthesis",
+      "title": "Implement a story reading view that displays the full story content with a text-to-speech feature that reads the story aloud using browser speech synthesis",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-visually-engaging-and-immersive-interface-with-a-literary-or-storytelling-theme-that-uses-warm-inviting-colors-and-typography-suitable-for-a-reading-experience",
+      "title": "Design a visually engaging and immersive interface with a literary or storytelling theme that uses warm, inviting colors and typography suitable for a reading experience",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "AI story generation across multiple genres (love, horror, fantasy, romance, thriller, sci-fi, historical)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "User story creation and publishing system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "AI text-to-speech for reading stories aloud",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Story browsing and reading interface",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Create a backend data model for stories that includes fields for title, content, author, genre (love, horror, fantasy, romance, thriller, science fiction, historical), creation date, and whether it is AI-generated or user-created",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Implement backend functions to create, retrieve, list, and filter stories by genre",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Generate a collection of AI-generated sample stories for each genre (love, horror, fantasy, romance, thriller, science fiction, historical) and seed them in the backend on initialization",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Story Hub",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

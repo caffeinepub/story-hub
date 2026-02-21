@@ -1,0 +1,128 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Story Hub - Frontend Implementation Plan",
+  "requirements": [
+    {
+      "id": "REQ-4",
+      "summary": "Create story browsing interface with genre navigation",
+      "acceptanceCriteria": [
+        "Users can browse stories by selecting different genres",
+        "All seven genres are clearly displayed and accessible",
+        "Story titles and basic metadata are visible in the browse view"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/BrowseStories.tsx",
+          "operation": "create",
+          "description": "Create the main story browsing page that displays genre tabs/navigation for all seven genres (love, horror, fantasy, romance, thriller, science fiction, historical) and renders filtered story lists. Use the backend's filterStoriesByGenre method to fetch stories for the selected genre. Display story cards showing title, author, genre, creation date, and AI-generated indicator. Include genre icons from frontend/public/assets/generated/genre-love.dim_128x128.png, genre-horror.dim_128x128.png, genre-fantasy.dim_128x128.png, genre-romance.dim_128x128.png, genre-thriller.dim_128x128.png, genre-scifi.dim_128x128.png, and genre-historical.dim_128x128.png."
+        },
+        {
+          "path": "frontend/src/components/StoryCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable story card component that displays story metadata (title, author, genre, creation date) and an AI-generated badge when applicable. Make the card clickable to navigate to the story reading view. Use shadcn/ui Card component for consistent styling."
+        },
+        {
+          "path": "frontend/src/components/GenreNav.tsx",
+          "operation": "create",
+          "description": "Create a genre navigation component that displays all seven genres as clickable tabs or buttons with their corresponding icons from frontend/public/assets/generated/. Handle active genre state and trigger filtering when a genre is selected."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /browse pointing to the BrowseStories page and ensure it is accessible from the main navigation. Use the core-infrastructure component's React app entry point structure."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Build story creation form for user-submitted stories",
+      "acceptanceCriteria": [
+        "Form includes fields for title, content, and genre dropdown",
+        "Users can submit and save new stories",
+        "Newly created stories appear in the story list immediately after publishing"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/CreateStory.tsx",
+          "operation": "create",
+          "description": "Create a story creation page with a form containing title input (text), content textarea (multiline), and genre dropdown (all seven genres). Use shadcn/ui Form, Input, Textarea, and Select components. On submit, call the backend's createStory method with the form data, marking isAIGenerated as false. After successful submission, redirect to the browse page or show a success message."
+        },
+        {
+          "path": "frontend/src/hooks/useStoryForm.ts",
+          "operation": "create",
+          "description": "Create a custom hook to manage story creation form state, validation, and submission logic. Handle loading states and error messages. Integrate with the backend's createStory method."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /create pointing to the CreateStory page and include a 'Create Story' link in the main navigation to make the form accessible."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Implement story reading view with text-to-speech playback",
+      "acceptanceCriteria": [
+        "Users can click on a story to view its full content",
+        "A play/pause button controls text-to-speech playback",
+        "The browser's speech synthesis API reads the story content aloud",
+        "Playback can be stopped and restarted"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ReadStory.tsx",
+          "operation": "create",
+          "description": "Create a story reading page that accepts a story title as a route parameter, fetches the full story using the backend's getStory method, and displays the complete story content with metadata. Include play/pause controls for text-to-speech functionality using the Web Speech API (window.speechSynthesis). Display the story with comfortable reading typography and spacing."
+        },
+        {
+          "path": "frontend/src/hooks/useTextToSpeech.tsx",
+          "operation": "create",
+          "description": "Create a custom hook that manages text-to-speech playback using the browser's Web Speech API. Expose play, pause, stop, and resume functions, along with playback state (playing, paused, stopped). Handle speech synthesis utterance creation and lifecycle events."
+        },
+        {
+          "path": "frontend/src/components/TextToSpeechControls.tsx",
+          "operation": "create",
+          "description": "Create a control panel component with play/pause/stop buttons for managing text-to-speech playback. Use shadcn/ui Button components and display the current playback state visually. Integrate with the useTextToSpeech hook."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /story/:title pointing to the ReadStory page. Ensure StoryCard components navigate to this route when clicked with the appropriate story title parameter."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Design a literary-themed interface with warm colors and reading-optimized typography",
+      "acceptanceCriteria": [
+        "The design evokes a literary or storytelling atmosphere",
+        "Typography is optimized for comfortable reading",
+        "Color scheme is warm and inviting, avoiding default blue and purple",
+        "Layout clearly separates browsing, reading, and creation experiences"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global styles to use a warm color palette (earth tones, warm browns, soft ambers, cream backgrounds) and set typography optimized for reading (serif fonts for story content, comfortable line height and spacing). Override default Tailwind colors to avoid blue and purple. Define CSS custom properties for the literary theme."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Customize Tailwind theme to include warm color palette (browns, ambers, creams, soft oranges) and extend typography plugin settings for optimal reading experience. Add custom font families suitable for a literary theme (serif for content, elegant sans-serif for UI)."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create a layout component that wraps all pages with consistent header navigation, warm background styling, and the hero image from frontend/public/assets/generated/hero-books.dim_1200x600.png displayed in a hero section on the main landing view. Use the warm literary theme colors and provide clear visual separation between sections."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all routes with the Layout component to ensure consistent literary theming across browsing, reading, and creation experiences."
+        }
+      ]
+    }
+  ]
+}
